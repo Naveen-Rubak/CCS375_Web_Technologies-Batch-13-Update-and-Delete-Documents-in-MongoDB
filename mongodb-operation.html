@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MongoDB Operations</title>
+</head>
+<body>
+
+<h2>MongoDB Update & Delete</h2>
+
+<button onclick="updateData()">Update Arun Marks</button>
+<br><br>
+<button onclick="deleteData()">Delete Kumar</button>
+
+<p id="result"></p>
+
+<script>
+function updateData() {
+    fetch('http://localhost:3000/update')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("result").innerHTML = data;
+        })
+        .catch(err => console.log(err));
+}
+
+function deleteData() {
+    fetch('http://localhost:3000/delete')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("result").innerHTML = data;
+        })
+        .catch(err => console.log(err));
+}
+</script>
+
+</body>
+</html>
